@@ -1,0 +1,238 @@
+<html>
+	<head>
+		<title>ΣΜΔ Berkeley</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="single">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="#">Sigma Mu Delta Beta Chapter</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="brothers.html">Brothers</a></li>
+								<li><a href="news.html">News</a></li>
+								<li><a href="recruitment.html">Recruitment</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="FAQ.html">FAQ</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="brothers.html">
+											<h3>Brothers</h3>
+										</a>
+									</li>
+									<li>
+										<a href="news.html">
+											<h3>News</h3>
+										</a>
+									</li>
+									<li>
+										<a href="recruitment.html">
+											<h3>Recruitment</h3>
+										</a>
+									</li>
+									<li>
+										<a href="about.htl">
+											<h3>About</h3>
+										</a>
+									</li>
+									<li>
+										<a href="FAQ.html">
+											<h3>FAQ</h3>
+										</a>
+									</li>
+									<li>
+										<a href="contact.html">
+											<h3>Contact Us</h3>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+					</section>
+					<section>
+						<h3>Contact Us</h3>
+						<form id="gform" method="POST" data-email="roshanlodha@berkeley.edu"
+  action="https://script.google.com/a/berkeley.edu/macros/s/AKfycbxh4ejPL0Bz9zkTB7V4MqJPq3-Uif3wT264VVnGRZHCRhJD1wBp/exec">
+							<div class="row uniform">
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="name" id="name" value="" placeholder="Name" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="email" name="email" id="email" value="" placeholder="Email" />
+								</div>
+								<div class="12u$">
+									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+								<div class="12u$">
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/SigmaMuDeltaBetaChapter/?ref=br_rs" class="fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/smdcal/" class="fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+							<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script type="text/javascript">
+				function validEmail(email) { // see:
+				  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+				  return re.test(email);
+				}
+
+				function validateHuman(honeypot) {
+				  if (honeypot) {  //if hidden form filled up
+				    console.log("Robot Detected!");
+				    return true;
+				  } else {
+				    console.log("Welcome Human!");
+				  }
+				}
+
+				// get all data in form and return object
+				function getFormData() {
+				  var form = document.getElementById("gform");
+				  var elements = form.elements; // all form elements
+				  var fields = Object.keys(elements).map(function(k) {
+				    if(elements[k].name !== undefined) {
+				      return elements[k].name;
+				    // special case for Edge's html collection
+				    }else if(elements[k].length > 0){
+				      return elements[k].item(0).name;
+				    }
+				  }).filter(function(item, pos, self) {
+				    return self.indexOf(item) == pos && item;
+				  });
+				  var data = {};
+				  fields.forEach(function(k){
+				    data[k] = elements[k].value;
+				    var str = ""; // declare empty string outside of loop to allow
+				                  // it to be appended to for each item in the loop
+				    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
+				      str = str + elements[k].checked + ", "; // take the string and append 
+				                                              // the current checked value to 
+				                                              // the end of it, along with 
+				                                              // a comma and a space
+				      data[k] = str.slice(0, -2); // remove the last comma and space 
+				                                  // from the  string to make the output 
+				                                  // prettier in the spreadsheet
+				    }else if(elements[k].length){
+				      for(var i = 0; i < elements[k].length; i++){
+				        if(elements[k].item(i).checked){
+				          str = str + elements[k].item(i).value + ", "; // same as above
+				          data[k] = str.slice(0, -2);
+				        }
+				      }
+				    }
+				  });
+
+				  // add form-specific values into the data
+				  data.formDataNameOrder = JSON.stringify(fields);
+				  data.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+				  data.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+				  console.log(data);
+				  return data;
+				}
+
+				function handleFormSubmit(event) {  // handles form submit withtout any jquery
+				  event.preventDefault();           // we are submitting via xhr below
+				  var data = getFormData();         // get the values submitted in the form
+
+				  /* OPTION: Remove this comment to enable SPAM prevention, see README.md
+				  if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+				    return false;
+				  }
+				  */
+
+				  if( !validEmail(data.email) ) {   // if email is not valid show error
+				    document.getElementById('email-invalid').style.display = 'block';
+				    return false;
+				  } else {
+				    var url = event.target.action;  //
+				    var xhr = new XMLHttpRequest();
+				    xhr.open('POST', url);
+				    // xhr.withCredentials = true;
+				    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				    xhr.onreadystatechange = function() {
+				        console.log( xhr.status, xhr.statusText )
+				        console.log(xhr.responseText);
+				        document.getElementById('gform').style.display = 'none'; // hide form
+				        document.getElementById('thankyou_message').style.display = 'block';
+				        return;
+				    };
+				    // url encode form data for sending as post data
+				    var encoded = Object.keys(data).map(function(k) {
+				        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+				    }).join('&')
+				    xhr.send(encoded);
+				  }
+				}
+				function loaded() {
+				  console.log('contact form submission handler loaded successfully');
+				  // bind to the submit event of our form
+				  var form = document.getElementById('gform');
+				  form.addEventListener("submit", handleFormSubmit, false);
+				};
+				document.addEventListener('DOMContentLoaded', loaded, false);
+			</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
